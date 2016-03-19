@@ -1,0 +1,108 @@
+@font-face {
+  font-family: MuseoSlab;
+  src: url("../fonts/Museo_Slab_500.otf") format("opentype");
+}
+
+html {
+  background: url(../images/coffee-beans.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  color: #5C4033;
+  font-family: "MuseoSlab";
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-board {
+  width: 90%;
+  margin: 0 auto;
+
+  &.flexbox {
+    height: 100%;
+    align-items: center;
+  }
+
+  section {
+    position: relative;
+    background: white;
+    margin: 2em;
+  }
+
+  h2 {
+    font-family: "Lobster", cursive;
+    margin: 0;
+  }
+
+  hr {
+    border-top: 3px dotted;
+  }
+
+  .menu-items {
+    padding: 1em;
+
+    .item,
+    .price {
+      margin: 0.5em 0;
+    }
+
+    .price {
+      text-align: right;
+    }
+  }
+
+  .cappuccino {
+    background: url(../images/cappuccino.jpg) no-repeat center center;
+    background-size: cover;
+  }
+
+  .croissant {
+    background: url(../images/croissant.jpg) no-repeat center center;
+    background-size: cover;
+  }
+
+  .hot-chocolate {
+    background: url(../images/hot-chocolate.jpg) no-repeat center center;
+    background-size: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(255,255,255,0.5);
+    width: 50%;
+    padding: 0.5em;
+  }
+}
+
+.flexbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+
+  .col {
+    flex: 1;
+  }
+
+  img {
+    width: 100%;
+  }
+}
