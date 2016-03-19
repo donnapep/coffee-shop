@@ -5,6 +5,7 @@
   var cleanCSS = require("gulp-clean-css");
   var concat = require("gulp-concat");
   var del = require("del");
+  var ghPages = require("gulp-gh-pages");
   var gulp = require("gulp");
   var jshint = require("gulp-jshint");
   var imagemin = require("gulp-imagemin");
@@ -28,7 +29,7 @@
     gulp.src("scss/*.scss")
       .pipe(sourcemaps.init())
       .pipe(sass(sassOptions).on("error", sass.logError))
-      // .pipe(cleanCSS())
+      .pipe(cleanCSS())
       .pipe(sourcemaps.write())
       .pipe(rename({ suffix: ".min" }))
       .pipe(gulp.dest("dist/css"))
@@ -80,6 +81,11 @@
 
   gulp.task("build", function (cb) {
     runSequence("clean", ["sass", "js", "html", "fonts", "images", "watch"], cb);
+  });
+
+  gulp.task("deploy", function() {
+    return gulp.src("./dist/**/*")
+      .pipe(ghPages());
   });
 
   gulp.task("default", function(cb) {
