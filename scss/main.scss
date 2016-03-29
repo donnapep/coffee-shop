@@ -10,7 +10,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
   box-sizing: border-box;
-  height: 100%;
 }
 
 *, *:before, *:after {
@@ -18,10 +17,10 @@ html {
 }
 
 body {
-  width: 100%;
-  height: 100%;
   color: #5C4033;
+  background-color: transparent;
   font-family: "MuseoSlab";
+  font-size: 16px;
 }
 
 ol, ul {
@@ -30,123 +29,147 @@ ol, ul {
   padding: 0;
 }
 
-header {
-  width: 100%;
-  // height: 100px;
-
-  #logo {
-    display: block;
-    margin: 0 auto;
-    height: 100px;
-  }
-}
-
 .menu {
-  width: 90%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-
-  .row {
-    display: flex;
-    /* Mobile */
-    // flex-direction: column;
-  }
-
-  .col {
-    flex: 1;
-  }
-
-  /* Mobile */
-  #bottom-row,
-  .featured-product {
-    // display: none;
-  }
+  margin-top: 1em;
+  margin-bottom: 1em;
 
   section {
+    margin-top: 30px;
+  }
+
+  h2 {
+    font-family: "Lobster", cursive;
+    font-size: 1.75em;
+    margin: 0;
+  }
+
+  header {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .menu-items {
     padding: 1em;
-
-    li {
-      white-space: nowrap;
-    }
-
-    .items {
-      display: flex;
-      align-items: flex-start;
-    }
-
-    .size {
-      font-size: 1em;
-    }
-
-    .item,
-    .price {
-      font-size: 1.25em;
-      margin: 0.5em 0;
-    }
-
-    .size,
-    .price {
-      text-align: center;
-    }
-
-    &.pastries .price {
-      text-align: right;
-    }
-  }
-
-  .featured-product  {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background: rgba(255,255,255,0.5);
-      width: 50%;
-      padding: 0.5em;
-    }
-  }
-
-  .logo {
-    background-image: url(../images/logo.png);
-  }
-
-  .cappuccino {
-    background-image: url(../images/cappuccino.jpg);
-  }
-
-  .hot-chocolate {
-    background-image: url(../images/hot-chocolate.jpg);
-  }
-
-  section {
-    position: relative;
-    margin: 2em;
-
-    &:not(.featured-product) {
-      background: white;
-    }
-
-    h2 {
-      font-family: "Lobster", cursive;
-      font-size: 1.75em;
-      margin: 0;
-    }
+    background: white;
 
     hr {
       border-top: 3px dotted;
     }
+
+    li {
+      white-space: nowrap;
+    }
+  }
+
+  .items {
+    display: flex;
+
+    .col {
+      flex: 1;
+    }
+  }
+
+  .size {
+    font-size: 1em;
+  }
+
+  .item,
+  .price {
+    margin: 0.5em 0;
+  }
+
+  .size,
+  .price {
+    text-align: center;
+  }
+
+  .small::after {
+    content: "S";
+  }
+
+  .medium::after {
+    content: "M";
+  }
+
+  .large::after {
+    content: "L";
+  }
+
+  .pastries .price {
+    text-align: right;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .menu {
-    .row {
-      flex-direction: row;
+    .items {
+      font-size: 1.25em;
+    }
+
+    .image {
+      position: relative;
+      height: 381px;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgba(255,255,255,0.5);
+        width: 50%;
+        padding: 0.25em;
+      }
+    }
+
+    .logo {
+      height: 409px;
+      background-size: 40%;
+      background-position: center center;
+      background-image: url(../images/logo.png);
+    }
+
+    .croissant {
+      background-image: url(../images/croissant.jpg);
+    }
+
+    .cappuccino {
+      background-image: url(../images/cappuccino.jpg);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .menu {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    // TODO: Do this with Bootstrap class.
+    header {
+      display: none;
+    }
+
+    .row:nth-of-type(1) {
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu {
+    .small::after {
+      content: "Small";
+    }
+
+    .medium::after {
+      content: "Medium";
+    }
+
+    .large::after {
+      content: "Large";
     }
   }
 }
