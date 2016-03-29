@@ -4,21 +4,29 @@
   <meta charset="UTF-8">
   <title>Coffee Shop Menu Board</title>
 
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-  <div class="menu">
-    <div class="col">
+  <div class="menu container-fluid">
 
-      <div class="logo">
-        <img src="images/logo.png">
-      </div>
+    <header>
+      <img src="images/logo.png">
+    </header>
 
-      <div class="flex-container">
+    <div class="row">
 
-        <section class="col">
+      <section class="col-md-12 visible-md-block visible-lg-block">
+        <div class="logo image"></div>
+      </section>
+
+    </div>
+
+    <div class="row">
+
+      <section class="col-sm-6 col-md-4">
+        <div class="menu-items">
           <h2>Hot Drinks</h2>
           <hr>
 
@@ -67,28 +75,11 @@
               <li class="price">3.40</li>
             </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- <section class="col image">
-        </section> -->
-
-        <section class="col cappuccino image">
-          <h2 class="overlay">
-            Free pastry with any large coffee!
-          </h2>
-        </section>
-
-      </div>
-
-      <div class="flex-container">
-
-        <section class="col hot-chocolate image">
-          <h2 class="overlay">
-            Free pastry with any large coffee!
-          </h2>
-        </section>
-
-        <section class="col">
+      <section class="col-sm-6 col-md-4 col-md-offset-4">
+        <div class="menu-items">
           <h2>Cold Drinks</h2>
           <hr>
 
@@ -100,8 +91,8 @@
               <li class="item">Americano</li>
               <li class="item">Frappucino</li>
               <li class="item">Tea</li>
-              <li class="item">Green Tea Latte</li>
               <li class="item">Chai Latte</li>
+              <li class="item">Frappe</li>
             </ul>
 
             <ul class="col">
@@ -137,14 +128,22 @@
               <li class="price">4.50</li>
             </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
+    </div>
 
+    <div class="row">
 
-      <div class="flex-container">
+      <section class="col-sm-6 col-md-4 hidden-xs">
+        <div class="croissant image">
+        <h2 class="overlay">
+          Free pastry with any large coffee!
+        </h2>
+      </section>
 
-        <section class="col pastries">
+      <section class="col-sm-6 col-md-4">
+        <div class="pastries menu-items">
           <h2>Pastries & Muffins</h2>
           <hr>
 
@@ -169,15 +168,16 @@
               <li class="price">2.75</li>
             </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="col croissant image">
-          <h2 class="overlay">
-            Free pastry with any large coffee!
-          </h2>
-        </section>
+      <section class="col-md-4 visible-md-block visible-lg-block">
+        <div class="cappuccino image">
+        <h2 class="overlay">
+          Free pastry with any large coffee!
+        </h2>
+      </section>
 
-      </div>
     </div>
   </div>
 </body>
