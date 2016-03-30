@@ -5,9 +5,6 @@
 
 html {
   background: url(../images/coffee-beans.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   box-sizing: border-box;
 }
@@ -114,6 +111,7 @@ ol, ul {
       height: 381px;
       background-size: cover;
       background-repeat: no-repeat;
+      background-position: center center;
 
       .overlay {
         position: absolute;
@@ -127,7 +125,6 @@ ol, ul {
     .logo {
       height: 409px;
       background-size: 40%;
-      background-position: center center;
       background-image: url(../images/logo.png);
     }
 
@@ -141,25 +138,16 @@ ol, ul {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .menu {
     margin-top: 0;
     margin-bottom: 30px;
-
-    // TODO: Do this with Bootstrap class.
-    header {
-      display: none;
-    }
 
     .row:nth-of-type(1) {
       position: absolute;
       width: 100%;
     }
-  }
-}
 
-@media (min-width: 1200px) {
-  .menu {
     .small::after {
       content: "Small";
     }

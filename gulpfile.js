@@ -2,6 +2,7 @@
 (function () {
   "use strict";
 
+  var autoprefixer = require("gulp-autoprefixer");
   var cleanCSS = require("gulp-clean-css");
   var concat = require("gulp-concat");
   var del = require("del");
@@ -30,6 +31,7 @@
       .pipe(sourcemaps.init())
       .pipe(sass(sassOptions).on("error", sass.logError))
       .pipe(cleanCSS())
+      .pipe(autoprefixer({ browsers: ["last 2 versions"] }))
       .pipe(sourcemaps.write())
       .pipe(rename({ suffix: ".min" }))
       .pipe(gulp.dest("dist/css"))
